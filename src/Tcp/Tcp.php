@@ -23,6 +23,7 @@ class Tcp
         $this->errno = 0;
         $this->errstr = "";
         $this->message = "";
+        $this->timeout = 5;
     }
 
     /**
