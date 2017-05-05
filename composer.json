@@ -1,0 +1,19 @@
+{
+  "name": "phizzl/networktools",
+  "description": "",
+  "minimum-stability": "dev",
+  "licence": "GPL-3.0",
+  "authors": [
+    {
+      "name": "Phillip Schleicher",
+      "email": "the@phizzl.de"
+    }
+  ],
+  "autoload": {
+    "psr-4": {"Phizzl\\NetworkTools\\": "src/"}
+  },
+  "require": {
+    "geerlingguy/ping": "1.1.2",
+    "guzzlehttp/guzzle": "6.2.3"
+  }
+}
