@@ -23,12 +23,12 @@ echo "www.google.com responded with status code {$response->getStatusCode()}\n";
 
 $port = 22;
 $tcp = new Tcp();
-$tcp->setHost("127.0.0.1");
+$tcp->setHost("github.com");
 $tcp->setPort($port);
 
 if($tcp->send()){
-    echo "Local port $port is open\n";
+    echo "Githubs port $port is open\n";
 }
 else{
-    echo "Local port $port is closed\n";
+    echo "Githubs port $port is closed\n";
 }
