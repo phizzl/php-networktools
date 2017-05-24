@@ -26,9 +26,10 @@ class HttpOptions
      */
     private $password;
 
-    private $allowedOptions = [
-        "timeout", "allow_redirects", "auth"
-    ];
+    /**
+     * @var bool
+     */
+    private $verifySsl;
 
     /**
      * HttpHeader constructor.
@@ -38,6 +39,7 @@ class HttpOptions
         $this->allowRedirects = false;
         $this->username = "";
         $this->password = "";
+        $this->verifySsl = true;
     }
 
     /**
@@ -51,7 +53,7 @@ class HttpOptions
      * @param bool $allowRedirects
      */
     public function setAllowRedirects($allowRedirects){
-        $this->allowRedirects = $allowRedirects;
+        $this->allowRedirects = (bool)$allowRedirects;
     }
 
     /**
@@ -68,6 +70,10 @@ class HttpOptions
         $this->password = $password;
     }
 
+    public function setVerifySsl($verifySsl){
+        $this->verifySsl = (bool)$verifySsl;
+    }
+
     /**
      * @return array
      */
@@ -75,7 +81,8 @@ class HttpOptions
         return [
             "allow_redirects" => $this->allowRedirects,
             "auth" => [$this->username, $this->password],
-            "timeout" => $this->timeout
+            "timeout" => $this->timeout,
+            "verify" => $this->verifySsl
         ];
     }
 }
