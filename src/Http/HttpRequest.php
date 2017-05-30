@@ -112,7 +112,8 @@ class HttpRequest
     public function send(){
         $options = array_merge([
             'headers' => $this->header->getHeader(),
-            'body' => $this->body
+            'body' => $this->body,
+            'curl' => [CURLOPT_FOLLOWLOCATION => true]
         ], $this->options->getOptions());
 
         return $this->client->request('GET', $this->host, $options);
